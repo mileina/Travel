@@ -1,0 +1,87 @@
+.france-container  {
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    overflow: hidden;
+  }
+  
+  .sideFrance {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+#sideFrance1 {
+    background-image: url('/public/France/Side1.png');
+    z-index: 3;
+  }
+  
+  #sideFrance2 {
+    background-image: url('/public/France/Side2.png');
+    z-index: 2;
+    background-size: 101%;
+    opacity: 0.9;
+  }
+  
+  #sideFrance3 {
+    background-image: url('/public/France/Side3.png');
+    z-index: 1;
+  }
+
+  .france-logo {
+    position: absolute;
+    top: 120px;
+    left: 20px;
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    z-index: 5;
+  }
+  
+  .france-menu-burger {
+    position: absolute;
+    top: 120px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    z-index: 5;
+  }
+  
+  .kiss-gif {
+    position: absolute; 
+    top: 54%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: 200px; 
+    height: auto; 
+    z-index: 2; 
+    filter: blur(2px);
+  }
+
+  @media screen and (max-width: 1800px) {
+    .france-container  {
+        height: 800px;
+      }
+      .background {
+        background-size: cover;
+      }
+    #sideFrance2{
+      background-size: cover;
+    }
+  
+  
+    .text {
+      font-size: 120px;
+    }
+  
+    .images-container {
+      height: 200px;
+    }
+  }
+  

@@ -5,7 +5,7 @@ import Egypte from './Travel/Egypte';
 import France from './Travel/France';
 
 function App() {
-  const [thailandeScrollPosition, setThailandeScrollPosition] = useState(0);
+  const [setThailandeScrollPosition] = useState(0);
   const [franceScrollPosition, setFranceScrollPosition] = useState(0);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 

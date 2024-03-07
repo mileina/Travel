@@ -15,53 +15,52 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-  
-  #side1 {
-    background-image: url('/public/Egypte/Side1.png');
-    z-index: 3;
+
+#side1 {
+  background-image: url("/public/Egypte/Side1.png");
+  z-index: 3;
+}
+
+#side2 {
+  background-image: url("/public/Egypte/Side2.png");
+  z-index: 2;
+  background-size: 101%;
+  opacity: 0.9;
+}
+
+#side3 {
+  background-image: url("/public/Egypte/Side3.jpg");
+  z-index: 1;
+}
+
+.bird-gif {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: auto;
+  z-index: 2;
+}
+
+@media screen and (max-width: 1800px) {
+  .background-container {
+    height: 800px;
   }
-  
+
+  .background {
+    background-size: cover;
+  }
+
   #side2 {
-    background-image: url('/public/Egypte/Side2.png');
-    z-index: 2;
-    background-size: 101%;
-    opacity: 0.9;
+    background-size: cover;
   }
-  
-  #side3 {
-    background-image: url('/public/Egypte/Side3.jpg');
-    z-index: 1;
+
+  .text {
+    font-size: 120px;
   }
-  
-  .bird-gif {
-    position: absolute; 
-    top: 50%; 
-    left: 40%; 
-    transform: translate(-50%, -50%);
-    width: 150px; 
-    height: auto; 
-    z-index: 2; 
+
+  .images-container {
+    height: 200px;
   }
-  
-  
-  @media screen and (max-width: 1800px) {
-    .background-container {
-      height: 800px;
-    }
-  
-    .background {
-      background-size: cover;
-    }
-  
-    #side2 {
-      background-size: cover;
-    }
-  
-    .text {
-      font-size: 120px;
-    }
-  
-    .images-container {
-      height: 200px;
-    }
-  }
+}

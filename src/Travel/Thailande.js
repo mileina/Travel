@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Travel.css';
 import './Thailande.css';
 
-function Thailande() {
+function Thailande({ onLoaded }) {
   const [showImages, setShowImages] = useState(false);
   const [selectedImage, setSelectedImage] = useState(2);
   const [textMovedUp, setTextMovedUp] = useState(false);
@@ -30,8 +30,12 @@ function Thailande() {
       if (imagesContainerRef.current) {
         imagesContainerRef.current.classList.add('show');
       }
+      if (onLoaded) {
+        onLoaded();
+      }
     }, 1000);
   };
+
 
   const handleImageClick = (index) => {
     setSelectedImage(index);
@@ -104,8 +108,8 @@ function Thailande() {
 
   return (
     <div className="sidethailand-container">
-<div className="thailand-logo">MIL</div>
-<div className="thailand-menu-burger">&#9776;</div>
+      <div className="thailand-logo">MIL</div>
+      <div className="thailand-menu-burger">&#9776;</div>
       <div className={`sidethailand ${showImages ? 'move-up' : ''}`} id="sidethailand1"></div>
       <div
         className={`sidethailand ${showImages ? 'move-up' : ''} ${side2Hovered ? 'side2-hovered' : ''}`}
@@ -161,10 +165,10 @@ function Thailande() {
       {showImages && selectedImage !== 0 && <button className="prev-button" onClick={handlePrevImage}>Previous</button>}
       {showImages && selectedImage !== 4 && <button className="next-button" onClick={handleNextImage}>Next</button>}
       <img
-  src={`${process.env.PUBLIC_URL}/Thailande/feu.gif`}
-  alt="feu"
-  className="feu-gif" 
-/>
+        src={`${process.env.PUBLIC_URL}/Thailande/feu.gif`}
+        alt="feu"
+        className="feu-gif"
+      />
     </div>
   );
 }

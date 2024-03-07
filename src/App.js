@@ -7,6 +7,7 @@ import France from './Travel/France';
 function App() {
   const [franceScrollPosition, setFranceScrollPosition] = useState(0);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const handleFranceScroll = () => {
@@ -25,6 +26,15 @@ function App() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <img src="/chargement.gif" alt="Chargement en cours..." className="loading-gif" />;
+  }
 
   return (
     <div className="App">

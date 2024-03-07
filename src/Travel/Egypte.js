@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Travel.css';
-import './Egypte.css'; 
+import './Egypte.css';
 import { useInView } from 'react-intersection-observer';
 
 function Egypte() {
@@ -22,8 +22,8 @@ function Egypte() {
   ];
 
   const { ref: textInViewRef, inView: isTextInView } = useInView({
-    threshold: 0.5, 
-    triggerOnce: true 
+    threshold: 0.5,
+    triggerOnce: true
   });
 
   useEffect(() => {
@@ -113,7 +113,7 @@ function Egypte() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
-  
+
   const lastScrollY = useRef(0);
 
   useEffect(() => {
@@ -122,9 +122,9 @@ function Egypte() {
       setTextMovedUp(isScrollingUp);
       lastScrollY.current = window.scrollY;
     };
-  
+
     window.addEventListener('scroll', handleScroll);
-  
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -189,10 +189,10 @@ function Egypte() {
       {showImages && selectedImage !== 0 && <button className="prev-button" onClick={handlePrevImage}>Previous</button>}
       {showImages && selectedImage !== 4 && <button className="next-button" onClick={handleNextImage}>Next</button>}
       <img
-  src={`${process.env.PUBLIC_URL}/Egypte/bird.gif`}
-  alt="Bird"
-  className="bird-gif" 
-/>
+        src={`${process.env.PUBLIC_URL}/Egypte/bird.gif`}
+        alt="Bird"
+        className="bird-gif"
+      />
     </div>
   );
 }

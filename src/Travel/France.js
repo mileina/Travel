@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Travel.css';
-import './France.css'; 
+import './France.css';
 import { useInView } from 'react-intersection-observer';
 
 function France() {
@@ -22,8 +22,8 @@ function France() {
   ];
 
   const { ref: textInViewRef, inView: isTextInView } = useInView({
-    threshold: 0.5, 
-    triggerOnce: true 
+    threshold: 0.5,
+    triggerOnce: true
   });
 
   useEffect(() => {
@@ -113,7 +113,7 @@ function France() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
-  
+
   const lastScrollY = useRef(0);
 
   useEffect(() => {
@@ -122,9 +122,9 @@ function France() {
       setTextMovedUp(isScrollingUp);
       lastScrollY.current = window.scrollY;
     };
-  
+
     window.addEventListener('scroll', handleScroll);
-  
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -191,7 +191,7 @@ function France() {
       <img
         src={`${process.env.PUBLIC_URL}/France/cat.gif`}
         alt="cat"
-        className="cat-gif" 
+        className="cat-gif"
       />
     </div>
   );

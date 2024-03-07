@@ -81,7 +81,7 @@ function Thailande() {
 
   useEffect(() => {
     const isMouseOnSide = mousePosition.x < window.innerWidth / 3 || mousePosition.x > window.innerWidth * 2 / 3;
-    const isMouseOnMiddle = mousePosition.x > window.innerWidth / 3 && mousePosition.x < window.innerWidth * 2 / 3;
+    const isMouseOnMiddle = mousePosition.x > window.innerWidth / 1 && mousePosition.x < window.innerWidth * 2 / 3;
     setSide2Hovered(isMouseOnSide && !isMouseOnMiddle);
   }, [mousePosition]);
 
@@ -111,7 +111,7 @@ function Thailande() {
         className={`sidethailand ${showImages ? 'move-up' : ''} ${side2Hovered ? 'side2-hovered' : ''}`}
         id="sidethailand2"
         style={{
-          transform: side2Hovered ? `perspective(500px) rotateY(${(mousePosition.x - window.innerWidth / 2) * 0.0004}deg) rotateX(${(mousePosition.y - window.innerHeight / 2) * -0.0003}deg)` : 'none'
+          transform: side2Hovered ? `perspective(500px) rotateY(${(mousePosition.x - window.innerWidth / 2) * 0.0009}deg) rotateX(${(mousePosition.y - window.innerHeight / 2) * -0.0003}deg)` : 'none'
         }}
       ></div>
       <div className={`sidethailand ${showImages ? 'move-up' : ''}`} id="sidethailand3"></div>
@@ -161,9 +161,9 @@ function Thailande() {
       {showImages && selectedImage !== 0 && <button className="prev-button" onClick={handlePrevImage}>Previous</button>}
       {showImages && selectedImage !== 4 && <button className="next-button" onClick={handleNextImage}>Next</button>}
       <img
-  src={`${process.env.PUBLIC_URL}/Thailande/fish.gif`}
-  alt="Fish"
-  className="fish-gif" 
+  src={`${process.env.PUBLIC_URL}/Thailande/feu.gif`}
+  alt="feu"
+  className="feu-gif" 
 />
     </div>
   );

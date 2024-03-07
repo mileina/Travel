@@ -54,16 +54,21 @@
   z-index: 5;
 }
 
-.fish-gif {
+.feu-gif {
   position: absolute; 
-  top: 60%; 
-  left: 20%; 
+  top: 25%; 
+  left: 47%; 
   transform: translate(-50%, -50%);
-  width: 250px; 
+  width: 220px; 
   height: auto; 
-  z-index: 2; 
-  filter: blur(1px);
+  z-index: 1; 
 }
+@keyframes slow {
+  0% { opacity: 0; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 
 @media screen and (max-width: 1800px) {
   .background-container {

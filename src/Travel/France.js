@@ -189,9 +189,9 @@ function France() {
       {showImages && selectedImage !== 0 && <button className="prev-button" onClick={handlePrevImage}>Previous</button>}
       {showImages && selectedImage !== 4 && <button className="next-button" onClick={handleNextImage}>Next</button>}
       <img
-        src={`${process.env.PUBLIC_URL}/France/kiss.gif`}
-        alt="kiss"
-        className="kiss-gif" 
+        src={`${process.env.PUBLIC_URL}/France/cat.gif`}
+        alt="cat"
+        className="cat-gif" 
       />
     </div>
   );

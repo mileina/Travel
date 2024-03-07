@@ -5,15 +5,10 @@ import Egypte from './Travel/Egypte';
 import France from './Travel/France';
 
 function App() {
-  const [setThailandeScrollPosition] = useState(0);
   const [franceScrollPosition, setFranceScrollPosition] = useState(0);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
   useEffect(() => {
-    const handleThailandeScroll = () => {
-      setThailandeScrollPosition(window.scrollY);
-    };
-
     const handleFranceScroll = () => {
       setFranceScrollPosition(window.scrollY);
     };
@@ -22,12 +17,10 @@ function App() {
       setWindowHeight(window.innerHeight);
     };
 
-    window.addEventListener('scroll', handleThailandeScroll);
     window.addEventListener('scroll', handleFranceScroll);
     window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener('scroll', handleThailandeScroll);
       window.removeEventListener('scroll', handleFranceScroll);
       window.removeEventListener('resize', handleResize);
     };

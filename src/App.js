@@ -6,7 +6,6 @@ import France from './Travel/France';
 
 function App() {
   const [franceScrollPosition, setFranceScrollPosition] = useState(0);
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -14,16 +13,10 @@ function App() {
       setFranceScrollPosition(window.scrollY);
     };
 
-    const handleResize = () => {
-      setWindowHeight(window.innerHeight);
-    };
-
     window.addEventListener('scroll', handleFranceScroll);
-    window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('scroll', handleFranceScroll);
-      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -38,15 +31,13 @@ function App() {
 
   return (
     <div className="App">
-      <div style={{ position: 'fixed', top: 0, width: '100%', height: windowHeight, zIndex: 1 }}>
+      <div style={{ height: '100vh' }}>
         <Thailande />
       </div>
-      <div style={{ marginTop: windowHeight }}>
-        <div style={{ paddingTop: '100vh' }}>
-          <Egypte />
-        </div>
-        <France scrollPosition={franceScrollPosition} />
+      <div style={{ paddingTop: '0vh' }}>
+        <Egypte />
       </div>
+      <France scrollPosition={franceScrollPosition} />
     </div>
   );
 }

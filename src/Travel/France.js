@@ -50,16 +50,6 @@ function France() {
     setTextMovedUp(true);
   };
 
-  const handlePrevImage = () => {
-    setSelectedImage(prevIndex => (prevIndex === 0 ? 4 : prevIndex - 1));
-    setTextMovedUp(false);
-  };
-
-  const handleNextImage = () => {
-    setSelectedImage(prevIndex => (prevIndex === 4 ? 0 : prevIndex + 1));
-    setTextMovedUp(false);
-  };
-
   const handleHideImages = () => {
     if (exploreButtonRef.current) {
       exploreButtonRef.current.classList.add('hide');

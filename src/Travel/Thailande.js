@@ -12,9 +12,9 @@ function Thailande({ onLoaded }) {
   const imagesContainerRef = useRef(null);
   const textRef = useRef(null);
   const [imagesLoaded, setImagesLoaded] = useState(false);
-  const containerRef = useRef(null);
+  const containerRef = useRef(null); 
 
-  const imagePaths = useMemo(() => [
+  const imagePaths = useMemo(() => [ 
     `${process.env.PUBLIC_URL}/Thailande/thailand1.png`,
     `${process.env.PUBLIC_URL}/Thailande/thailand2.png`,
     `${process.env.PUBLIC_URL}/Thailande/thailand3.png`,
@@ -32,15 +32,15 @@ function Thailande({ onLoaded }) {
           img.onerror = reject;
         });
       }));
-      setImagesLoaded(true);
+      setImagesLoaded(true); 
     };
 
     loadImages();
   }, [imagePaths]);
-
+  
   useEffect(() => {
     if (imagesLoaded && onLoaded) {
-      onLoaded();
+      onLoaded(); 
     }
   }, [imagesLoaded, onLoaded]);
 
@@ -78,17 +78,6 @@ function Thailande({ onLoaded }) {
     setSelectedImage(index);
     setTextMovedUp(true);
   };
-
-  const handlePrevImage = () => {
-    setSelectedImage(prevIndex => (prevIndex === 0 ? 4 : prevIndex - 1));
-    setTextMovedUp(false);
-  };
-
-  const handleNextImage = () => {
-    setSelectedImage(prevIndex => (prevIndex === 4 ? 0 : prevIndex + 1));
-    setTextMovedUp(false);
-  };
-
   const handleHideImages = () => {
     if (exploreButtonRef.current) {
       exploreButtonRef.current.classList.add('hide');

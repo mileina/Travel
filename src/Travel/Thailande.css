@@ -91,9 +91,9 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 200px;
+  margin-top: 20px;
   position: absolute;
-  bottom: 100px;
+  bottom: 150px !important;
   left: 50%;
   transform: translate(-50%, 0);
   opacity: 0;

@@ -110,9 +110,10 @@ function Thailande({ onLoaded }) {
   }, []);
 
   useEffect(() => {
-    const handleDeviceOrientation = (event) => {
-      const { beta, gamma } = event;
+    const handleDeviceOrientation = () => {
       setSide2Hovered(true);
+      const beta = window.orientation === 0 ? event.beta : event.gamma;
+      const gamma = window.orientation === 0 ? event.gamma : -event.beta;
       setMousePosition({ x: gamma, y: beta });
     };
   
@@ -122,6 +123,7 @@ function Thailande({ onLoaded }) {
       window.removeEventListener('deviceorientation', handleDeviceOrientation);
     };
   }, []);
+  
   useEffect(() => {
     const handleDeviceOrientation = (event) => {
       const { beta, gamma } = event;

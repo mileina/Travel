@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import './Travel.css';
 import './Thailande.css';
 
@@ -13,13 +13,13 @@ function Thailande({ onLoaded }) {
   const textRef = useRef(null);
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
-  const imagePaths = [ 
+  const imagePaths = useMemo(() => [ 
     `${process.env.PUBLIC_URL}/Thailande/thailand1.png`,
     `${process.env.PUBLIC_URL}/Thailande/thailand2.png`,
     `${process.env.PUBLIC_URL}/Thailande/thailand3.png`,
     `${process.env.PUBLIC_URL}/Thailande/thailand4.png`,
     `${process.env.PUBLIC_URL}/Thailande/thailand5.png`,
-  ];
+  ], []);
 
   useEffect(() => {
     const loadImages = async () => {
@@ -33,7 +33,7 @@ function Thailande({ onLoaded }) {
       }));
       setImagesLoaded(true); 
     };
-  
+
     loadImages();
   }, [imagePaths]);
   

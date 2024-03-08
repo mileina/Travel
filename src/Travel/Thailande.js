@@ -110,10 +110,9 @@ function Thailande({ onLoaded }) {
   }, []);
 
   useEffect(() => {
-    const handleDeviceOrientation = () => {
+    const handleDeviceOrientation = (event) => {
+      const { beta, gamma } = event;
       setSide2Hovered(true);
-      const beta = window.orientation === 0 ? event.beta : event.gamma;
-      const gamma = window.orientation === 0 ? event.gamma : -event.beta;
       setMousePosition({ x: gamma, y: beta });
     };
   
@@ -123,7 +122,6 @@ function Thailande({ onLoaded }) {
       window.removeEventListener('deviceorientation', handleDeviceOrientation);
     };
   }, []);
-  
   useEffect(() => {
     const handleDeviceOrientation = (event) => {
       const { beta, gamma } = event;
@@ -234,10 +232,10 @@ function Thailande({ onLoaded }) {
       </button>
 
       {showImages && (
-        <div
-          ref={imagesContainerRef}
-          className={`images-container ${showImages ? '' : 'hide'}`}
-        >
+ <div
+ ref={imagesContainerRef}
+ className={`images-containerthailand ${showImages ? '' : 'hide'}`}
+>
           {[0, 1, 2, 3, 4].map((index) => (
             <div
               key={index}

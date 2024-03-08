@@ -91,7 +91,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 200px;
   position: absolute;
   bottom: 100px;
   left: 50%;
@@ -120,6 +120,12 @@
   }
 }
 
+@media screen and (max-width: 2560px) {
+  .images-containerthailand {
+    bottom: 10px;
+  }
+}
+
 @media screen and (max-width: 1800px) {
   .background-container {
     height: 800px;
@@ -139,11 +145,9 @@
   }
 }
 
-
-
 @media screen and (max-width: 1440px) {
   .images-containerthailand {
-    bottom: 100px;
+    bottom: 80px;
   }
 
   .fish-gif {
@@ -159,7 +163,7 @@
   }
 
   .images-containerthailand {
-    bottom: 70px;
+    bottom: 20px;
   }
 
   .explore-buttonthailand {

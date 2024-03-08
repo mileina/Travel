@@ -33,10 +33,10 @@ function Thailande({ onLoaded }) {
       }));
       setImagesLoaded(true); 
     };
-
+  
     loadImages();
-  }, []);
-
+  }, [imagePaths]);
+  
   useEffect(() => {
     if (imagesLoaded && onLoaded) {
       onLoaded(); 

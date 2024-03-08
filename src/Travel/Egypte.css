@@ -5,7 +5,10 @@
   overflow: hidden;
 }
 
-.background {
+.background,
+#side1,
+#side2,
+#side3 {
   position: absolute;
   top: 0;
   left: 0;
@@ -33,36 +36,44 @@
 .bird-gif {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 40%;
   transform: translate(-50%, -50%);
   width: 150px;
   z-index: 2;
 }
 
 .textegypt {
+  margin-top: 30px;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 42%;
+  top: 100%;
+  transform: translate(-50%, 0%);
   z-index: 1;
   color: white;
   font-size: 150px;
   font-weight: bold;
-  top: 20%;
-  opacity: 1;
-  transition: transform 1s ease, opacity 1s ease;
+  opacity: 0;
   animation: slideUpText 2s ease-out forwards;
 }
 
+.textegypt.text-move-up,
+.textegypt.text-move-down {
+  transition: transform 1s ease, opacity 1s ease;
+}
+
 .textegypt.text-move-up {
-  transform: translateY(-40%);
+  transform: translate(-50%, -40%);
+  opacity: 1;
 }
 
 .textegypt.text-move-down {
-  transition: transform 6s ease-in-out, opacity 1s ease-in-out;
+  top: 20%;
+  opacity: 0;
 }
 
 @media screen and (max-width: 1800px) {
   .background-container { height: 800px; }
+  .text { font-size: 120px; }
 }
 
 @media screen and (max-width: 768px) {

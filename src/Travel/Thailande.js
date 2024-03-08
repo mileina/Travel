@@ -264,11 +264,6 @@ function Thailande({ onLoaded }) {
           ))}
         </div>
       )}
-      <img
-        src={`${process.env.PUBLIC_URL}/Thailande/feu.gif`}
-        alt="feu"
-        className="feu-gif"
-      />
     </div>
   );
 }

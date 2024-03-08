@@ -5,16 +5,15 @@
   overflow: hidden;
 }
 
-.background,
-#side1,
-#side2,
-#side3 {
+.background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: no-repeat center / cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #side1 {
@@ -25,6 +24,7 @@
 #side2 {
   background-image: url("/public/Egypte/side2.webp");
   z-index: 2;
+  background-size: 101%;
   opacity: 0.9;
 }
 
@@ -39,47 +39,95 @@
   left: 40%;
   transform: translate(-50%, -50%);
   width: 150px;
+  height: auto;
   z-index: 2;
 }
 
 .textegypt {
   margin-top: 30px;
   position: absolute;
-  left: 42%;
-  top: 100%;
-  transform: translate(-50%, 0%);
   z-index: 1;
   color: white;
   font-size: 150px;
   font-weight: bold;
+  left: 42%;
+  top: 100%;
+  transform: translate(-50%, 0%);
   opacity: 0;
   animation: slideUpText 2s ease-out forwards;
 }
 
-.textegypt.text-move-up,
-.textegypt.text-move-down {
-  transition: transform 1s ease, opacity 1s ease;
+@keyframes slideUpText {
+  from {
+    top: 100%;
+    opacity: 0;
+  }
+
+  to {
+    top: 20%;
+    opacity: 1;
+  }
 }
 
 .textegypt.text-move-up {
   transform: translate(-50%, -40%);
   opacity: 1;
+  transition: transform 1s ease, opacity 1s ease;
 }
 
 .textegypt.text-move-down {
   top: 20%;
   opacity: 0;
+  transition: transform 6s ease-in-out, opacity 1s ease-in-out;
+}
+
+@keyframes slideUpText {
+  from {
+    top: 100%;
+    opacity: 0;
+  }
+
+  to {
+    top: 20%;
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 1800px) {
-  .background-container { height: 800px; }
-  .text { font-size: 120px; }
+  .background-container {
+    height: 800px;
+  }
+
+  .background {
+    background-size: cover;
+  }
+
+  #side2 {
+    background-size: cover;
+  }
+
+  .text {
+    font-size: 120px;
+  }
+
+  .images-container {
+    height: 200px;
+  }
 }
 
+
 @media screen and (max-width: 768px) {
-  .textegypt { font-size: 110px; top: 10%; }
+  .textegypt {
+    font-size: 110px !important;
+    top: 10%;
+  }
+
 }
 
 @media screen and (max-width: 425px) {
-  .textegypt { font-size: 70px; top: 25%; }
+  .textegypt {
+    font-size: 70px !important;
+    top: 25% !important;
+
+  }
 }

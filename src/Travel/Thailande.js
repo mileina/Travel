@@ -12,7 +12,6 @@ function Thailande({ onLoaded }) {
   const imagesContainerRef = useRef(null);
   const textRef = useRef(null);
   const [imagesLoaded, setImagesLoaded] = useState(false);
-  const containerRef = useRef(null); 
 
   const imagePaths = useMemo(() => [ 
     `${process.env.PUBLIC_URL}/Thailande/thailand1.png`,
@@ -78,6 +77,7 @@ function Thailande({ onLoaded }) {
     setSelectedImage(index);
     setTextMovedUp(true);
   };
+
   const handleHideImages = () => {
     if (exploreButtonRef.current) {
       exploreButtonRef.current.classList.add('hide');
@@ -110,10 +110,18 @@ function Thailande({ onLoaded }) {
   }, []);
 
   useEffect(() => {
-    const isMouseOnSide = mousePosition.x < window.innerWidth / 3 || mousePosition.x > window.innerWidth * 2 / 3;
-    const isMouseOnMiddle = mousePosition.x > window.innerWidth / 1 && mousePosition.x < window.innerWidth * 2 / 3;
-    setSide2Hovered(isMouseOnSide && !isMouseOnMiddle);
-  }, [mousePosition]);
+    const handleDeviceOrientation = (event) => {
+      const { beta, gamma } = event;
+      setSide2Hovered(true);
+      setMousePosition({ x: beta, y: gamma });
+    };
+
+    window.addEventListener('deviceorientation', handleDeviceOrientation);
+
+    return () => {
+      window.removeEventListener('deviceorientation', handleDeviceOrientation);
+    };
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -132,29 +140,17 @@ function Thailande({ onLoaded }) {
     };
   }, []);
 
-  useEffect(() => {
-    const handleDeviceOrientation = (event) => {
-      const { alpha, beta, gamma } = event;
-      if (containerRef.current) {
-        containerRef.current.style.transform = `rotateX(${beta}deg) rotateY(${gamma}deg) rotateZ(${alpha}deg)`;
-      }
-    };
-
-    window.addEventListener('deviceorientation', handleDeviceOrientation);
-
-    return () => {
-      window.removeEventListener('deviceorientation', handleDeviceOrientation);
-    };
-  }, []);
-
   return (
-    <div className="sidethailand-container" ref={containerRef}>
+    <div className="sidethailand-container">
       <div className="thailand-logo">MIL</div>
       <div className="thailand-menu-burger">&#9776;</div>
       <div className={`sidethailand ${showImages ? 'move-up' : ''}`} id="sidethailand1"></div>
       <div
         className={`sidethailand ${showImages ? 'move-up' : ''} ${side2Hovered ? 'side2-hovered' : ''}`}
         id="sidethailand2"
+        style={{
+          transform: side2Hovered ? `perspective(500px) rotateY(${(mousePosition.x - window.innerWidth / 2) * 0.009}deg) rotateX(${(mousePosition.y - window.innerHeight / 2) * -0.003}deg)` : 'none'
+        }}
       ></div>
       <div className={`sidethailand ${showImages ? 'move-up' : ''}`} id="sidethailand3"></div>
       <div ref={textRef} className={`text ${showImages ? 'move-up' : ''} ${textMovedUp ? 'text-move-up' : ''}`}>

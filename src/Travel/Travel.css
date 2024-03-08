@@ -61,7 +61,7 @@
 .explore-button {
   z-index: 5;
   position: absolute;
-  bottom: 30%;
+  bottom: 35%;
   left: 50%;
   transform: translateX(-50%);
   padding: 20px 50px;
@@ -359,7 +359,7 @@
 
 @media screen and (max-width: 320px) {
   .text {
-    font-size: 60px !important;
+    font-size: 55px !important;
     left: 50%;
     transform: translateX(-50%);
     top: 10%;

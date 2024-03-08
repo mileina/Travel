@@ -11,6 +11,37 @@ function Thailande({ onLoaded }) {
   const exploreButtonRef = useRef(null);
   const imagesContainerRef = useRef(null);
   const textRef = useRef(null);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  const imagePaths = [ 
+    `${process.env.PUBLIC_URL}/Thailande/thailand1.png`,
+    `${process.env.PUBLIC_URL}/Thailande/thailand2.png`,
+    `${process.env.PUBLIC_URL}/Thailande/thailand3.png`,
+    `${process.env.PUBLIC_URL}/Thailande/thailand4.png`,
+    `${process.env.PUBLIC_URL}/Thailande/thailand5.png`,
+  ];
+
+  useEffect(() => {
+    const loadImages = async () => {
+      await Promise.all(imagePaths.map(src => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = src;
+          img.onload = resolve;
+          img.onerror = reject;
+        });
+      }));
+      setImagesLoaded(true); 
+    };
+
+    loadImages();
+  }, []);
+
+  useEffect(() => {
+    if (imagesLoaded && onLoaded) {
+      onLoaded(); 
+    }
+  }, [imagesLoaded, onLoaded]);
 
   const imageTexts = [
     "Entre les colonnes vestiges, le Bouddha repose, écho de sérénité au coeur de l'ancienne cité, sous le regard bienveillant du temps.",
@@ -21,6 +52,11 @@ function Thailande({ onLoaded }) {
   ];
 
   const handleExploreClick = () => {
+    if (!imagesLoaded) {
+      console.log("Images are still loading.");
+      return;
+    }
+
     setTextMovedUp(true);
     if (exploreButtonRef.current) {
       exploreButtonRef.current.style.animation = 'exploreButtonHideAnimation 1s forwards';

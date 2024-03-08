@@ -12,8 +12,9 @@ function Thailande({ onLoaded }) {
   const imagesContainerRef = useRef(null);
   const textRef = useRef(null);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const containerRef = useRef(null);
 
-  const imagePaths = useMemo(() => [ 
+  const imagePaths = useMemo(() => [
     `${process.env.PUBLIC_URL}/Thailande/thailand1.png`,
     `${process.env.PUBLIC_URL}/Thailande/thailand2.png`,
     `${process.env.PUBLIC_URL}/Thailande/thailand3.png`,
@@ -31,15 +32,15 @@ function Thailande({ onLoaded }) {
           img.onerror = reject;
         });
       }));
-      setImagesLoaded(true); 
+      setImagesLoaded(true);
     };
 
     loadImages();
   }, [imagePaths]);
-  
+
   useEffect(() => {
     if (imagesLoaded && onLoaded) {
-      onLoaded(); 
+      onLoaded();
     }
   }, [imagesLoaded, onLoaded]);
 
@@ -142,29 +143,43 @@ function Thailande({ onLoaded }) {
     };
   }, []);
 
+  useEffect(() => {
+    const handleDeviceOrientation = (event) => {
+      const { alpha, beta, gamma } = event;
+      if (containerRef.current) {
+        containerRef.current.style.transform = `rotateX(${beta}deg) rotateY(${gamma}deg) rotateZ(${alpha}deg)`;
+      }
+    };
+
+    window.addEventListener('deviceorientation', handleDeviceOrientation);
+
+    return () => {
+      window.removeEventListener('deviceorientation', handleDeviceOrientation);
+    };
+  }, []);
+
   return (
-    <div className="sidethailand-container">
+    <div className="sidethailand-container" ref={containerRef}>
       <div className="thailand-logo">MIL</div>
       <div className="thailand-menu-burger">&#9776;</div>
       <div className={`sidethailand ${showImages ? 'move-up' : ''}`} id="sidethailand1"></div>
       <div
         className={`sidethailand ${showImages ? 'move-up' : ''} ${side2Hovered ? 'side2-hovered' : ''}`}
         id="sidethailand2"
-        style={{
-          transform: side2Hovered ? `perspective(500px) rotateY(${(mousePosition.x - window.innerWidth / 2) * 0.0009}deg) rotateX(${(mousePosition.y - window.innerHeight / 2) * -0.0003}deg)` : 'none'
-        }}
       ></div>
       <div className={`sidethailand ${showImages ? 'move-up' : ''}`} id="sidethailand3"></div>
       <div ref={textRef} className={`text ${showImages ? 'move-up' : ''} ${textMovedUp ? 'text-move-up' : ''}`}>
         THAILAND
       </div>
+
       <button
         ref={exploreButtonRef}
-        className={`explore-button ${showImages ? 'hide' : ''}`}
+        className={`explore-buttonthailand ${showImages ? 'hide' : ''}`}
         onClick={handleExploreClick}
       >
         EXPLORE
       </button>
+
       {showImages && (
         <div
           ref={imagesContainerRef}
@@ -198,8 +213,6 @@ function Thailande({ onLoaded }) {
           ))}
         </div>
       )}
-      {showImages && selectedImage !== 0 && <button className="prev-button" onClick={handlePrevImage}>Previous</button>}
-      {showImages && selectedImage !== 4 && <button className="next-button" onClick={handleNextImage}>Next</button>}
       <img
         src={`${process.env.PUBLIC_URL}/Thailande/feu.gif`}
         alt="feu"

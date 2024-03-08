@@ -186,8 +186,6 @@ function Egypte() {
           ))}
         </div>
       )}
-      {showImages && selectedImage !== 0 && <button className="prev-button" onClick={handlePrevImage}>Previous</button>}
-      {showImages && selectedImage !== 4 && <button className="next-button" onClick={handleNextImage}>Next</button>}
       <img
         src={`${process.env.PUBLIC_URL}/Egypte/bird.gif`}
         alt="Bird"

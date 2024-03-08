@@ -154,10 +154,7 @@ function France() {
         EXPLORE
       </button>
       {showImages && (
-        <div
-          ref={imagesContainerRef}
-          className={`images-container ${showImages ? '' : 'hide'}`}
-        >
+        <div className={`images-containerfrance ${showImages ? '' : 'hide'}`} ref={imagesContainerRef}>
           {[0, 1, 2, 3, 4].map((index) => (
             <div
               key={index}
@@ -186,8 +183,6 @@ function France() {
           ))}
         </div>
       )}
-      {showImages && selectedImage !== 0 && <button className="prev-button" onClick={handlePrevImage}>Previous</button>}
-      {showImages && selectedImage !== 4 && <button className="next-button" onClick={handleNextImage}>Next</button>}
       <img
         src={`${process.env.PUBLIC_URL}/France/cat.gif`}
         alt="cat"

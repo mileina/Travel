@@ -61,11 +61,11 @@
 .explore-button {
   z-index: 5;
   position: absolute;
-  bottom: 35%;
+  bottom: 25%;
   left: 50%;
   transform: translateX(-50%);
-  padding: 20px 50px;
-  font-size: 10px;
+  padding: 1.5em 3em;
+  font-size: 16px;
   color: black;
   background-color: white;
   border: none;
@@ -155,7 +155,7 @@
   align-items: center;
   margin-top: 20px;
   position: absolute;
-  bottom: 200px;
+  bottom: 300px;
   left: 50%;
   transform: translate(-50%, 0);
   opacity: 0;
@@ -216,28 +216,6 @@
   width: 200px;
 }
 
-.prev-button,
-.next-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 18px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: none;
-  cursor: pointer;
-  padding: 10px 20px;
-  border-radius: 5px;
-}
-
-.prev-button {
-  left: 20px;
-}
-
-.next-button {
-  right: 20px;
-}
-
 .image-text-container {
   position: absolute;
   bottom: 100%;
@@ -250,13 +228,11 @@
   text-align: center;
 }
 
-
-
 @media screen and (max-width: 1440px) {
 
 
   .images-container {
-    bottom: 250px;
+    bottom: 170px;
   }
 
   .image-item img {
@@ -266,26 +242,29 @@
 
   .image-text-container {
     transform: translateX(-50%) translateY(-10px);
+
+
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .background-container {
-    height: 800px;
-  }
-
   .images-container {
-    bottom: 200px;
+    bottom: 120px;
   }
 
   .image-item img {
     max-width: 300px;
     max-height: 200px;
-    padding-bottom: 100px ;
+    padding-bottom: 100px;
   }
 
   .image-text-container {
     transform: translateX(-50%) translateY(-10px);
+  }
+
+  .explore-button {
+    padding: 1em 2em;
+    font-size: 0.8em;
   }
 }
 
@@ -296,7 +275,7 @@
   }
 
   .images-container {
-    bottom: 200px;
+    bottom: 110px;
   }
 
   .image-item img {
@@ -319,7 +298,7 @@
   }
 
   .images-container {
-    bottom: 220px;
+    bottom: 140px;
   }
 
   .image-item img {
@@ -342,10 +321,6 @@
     left: 170px;
   }
 
-  .images-container {
-    bottom: 300px;
-  }
-
   .image-item img {
     margin-top: 30px;
     max-width: 130px;
@@ -357,7 +332,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%) translateY(-25px);
-    width: 90%;
+    width: 120%;
     text-align: center;
   }
 }
@@ -369,10 +344,6 @@
     left: 50%;
     transform: translateX(-50%);
     top: 10%;
-  }
-
-  .images-container {
-    bottom: 300px;
   }
 
   .image-item img {

@@ -17,13 +17,13 @@
 }
 
 #sideFrance1 {
-  background-image: url('/public/France/Side1.png');
+  background-image: url('/public/France/Side1.webp');
   z-index: 3;
   filter: blur(1px)
 }
 
 #sideFrance2 {
-  background-image: url('/public/France/Side2.png');
+  background-image: url('/public/France/Side2.webp');
   z-index: 2;
   background-size: 100%;
   opacity: 0.9;
@@ -31,7 +31,7 @@
 }
 
 #sideFrance3 {
-  background-image: url('/public/France/Side3.png');
+  background-image: url('/public/France/Side3.webp');
   z-index: 1;
 }
 

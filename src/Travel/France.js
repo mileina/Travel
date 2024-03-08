@@ -165,7 +165,7 @@ function France() {
                 </div>
               )}
               <img
-                src={`${process.env.PUBLIC_URL}/France/france${index + 1}.png`}
+                src={`${process.env.PUBLIC_URL}/France/france${index + 1}.webp`}
                 alt={`France ${index + 1}`}
                 style={{ width: `${index === selectedImage ? '600px' : '150px'}` }}
               />

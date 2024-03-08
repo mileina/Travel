@@ -17,19 +17,19 @@
 }
 
 #side1 {
-  background-image: url("/public/Egypte/Side1.png");
+  background-image: url("/public/Egypte/side1.webp");
   z-index: 3;
 }
 
 #side2 {
-  background-image: url("/public/Egypte/Side2.png");
+  background-image: url("/public/Egypte/side2.webp");
   z-index: 2;
   background-size: 101%;
   opacity: 0.9;
 }
 
 #side3 {
-  background-image: url("/public/Egypte/Side3.jpg");
+  background-image: url("/public/Egypte/side3.webp");
   z-index: 1;
 }
 

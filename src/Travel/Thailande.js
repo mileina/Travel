@@ -14,11 +14,11 @@ function Thailande({ onLoaded }) {
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
   const imagePaths = useMemo(() => [ 
-    `${process.env.PUBLIC_URL}/Thailande/thailand1.png`,
-    `${process.env.PUBLIC_URL}/Thailande/thailand2.png`,
-    `${process.env.PUBLIC_URL}/Thailande/thailand3.png`,
-    `${process.env.PUBLIC_URL}/Thailande/thailand4.png`,
-    `${process.env.PUBLIC_URL}/Thailande/thailand5.png`,
+    `${process.env.PUBLIC_URL}/Thailande/thailand1.webp`,
+    `${process.env.PUBLIC_URL}/Thailande/thailand2.webp`,
+    `${process.env.PUBLIC_URL}/Thailande/thailand3.webp`,
+    `${process.env.PUBLIC_URL}/Thailande/thailand4.webp`,
+    `${process.env.PUBLIC_URL}/Thailande/thailand5.webp`,
   ], []);
 
   useEffect(() => {
@@ -256,7 +256,7 @@ function Thailande({ onLoaded }) {
                 </div>
               )}
               <img
-                src={`${process.env.PUBLIC_URL}/Thailande/thailand${index + 1}.png`}
+                src={`${process.env.PUBLIC_URL}/Thailande/thailand${index + 1}.webp`}
                 alt={`Thailand ${index + 1}`}
                 style={{ width: `${index === selectedImage ? '600px' : '150px'}` }}
               />

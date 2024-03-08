@@ -168,7 +168,7 @@ function Egypte() {
                 </div>
               )}
               <img
-                src={`${process.env.PUBLIC_URL}/Egypte/egypt${index + 1}.png`}
+                src={`${process.env.PUBLIC_URL}/Egypte/egypt${index + 1}.webp`}
                 alt={`Egypt ${index + 1}`}
                 style={{ width: `${index === selectedImage ? '600px' : '150px'}` }}
               />

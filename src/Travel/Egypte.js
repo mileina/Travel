@@ -133,9 +133,9 @@ function Egypte() {
         }}
       ></div>
       <div className={`background ${showImages ? 'move-up' : ''}`} id="side3"></div>
-      <div className={`text ${showImages ? 'move-up' : ''} ${textMovedUp ? 'text-move-up' : ''}`} ref={textInViewRef}>
-        EGYPT
-      </div>
+      <div className={`textegypt ${showImages ? 'move-up' : ''} ${textMovedUp ? 'text-move-up' : ''}`} ref={textInViewRef}>
+  EGYPT
+</div>
       <button
         ref={exploreButtonRef}
         className={`explore-button ${showImages ? 'hide' : ''}`}

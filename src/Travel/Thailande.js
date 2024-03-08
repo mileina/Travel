@@ -113,15 +113,81 @@ function Thailande({ onLoaded }) {
     const handleDeviceOrientation = (event) => {
       const { beta, gamma } = event;
       setSide2Hovered(true);
-      setMousePosition({ x: beta, y: gamma });
+      setMousePosition({ x: gamma, y: beta });
     };
-
+  
     window.addEventListener('deviceorientation', handleDeviceOrientation);
-
+  
     return () => {
       window.removeEventListener('deviceorientation', handleDeviceOrientation);
     };
   }, []);
+  useEffect(() => {
+    const handleDeviceOrientation = (event) => {
+      const { beta, gamma } = event;
+      setSide2Hovered(true);
+      setMousePosition({ x: gamma, y: beta });
+    };
+  
+    window.addEventListener('deviceorientation', handleDeviceOrientation);
+  
+    return () => {
+      window.removeEventListener('deviceorientation', handleDeviceOrientation);
+    };
+  }, []);
+  useEffect(() => {
+    const handleDeviceOrientation = (event) => {
+      const { beta, gamma } = event;
+      setSide2Hovered(true);
+      setMousePosition({ x: gamma, y: beta });
+    };
+  
+    window.addEventListener('deviceorientation', handleDeviceOrientation);
+  
+    return () => {
+      window.removeEventListener('deviceorientation', handleDeviceOrientation);
+    };
+  }, []);
+  useEffect(() => {
+    const handleDeviceOrientation = (event) => {
+      const { beta, gamma } = event;
+      setSide2Hovered(true);
+      setMousePosition({ x: gamma, y: beta });
+    };
+  
+    window.addEventListener('deviceorientation', handleDeviceOrientation);
+  
+    return () => {
+      window.removeEventListener('deviceorientation', handleDeviceOrientation);
+    };
+  }, []);
+  useEffect(() => {
+    const handleDeviceOrientation = (event) => {
+      const { beta, gamma } = event;
+      setSide2Hovered(true);
+      setMousePosition({ x: gamma, y: beta });
+    };
+  
+    window.addEventListener('deviceorientation', handleDeviceOrientation);
+  
+    return () => {
+      window.removeEventListener('deviceorientation', handleDeviceOrientation);
+    };
+  }, []);
+  useEffect(() => {
+    const handleDeviceOrientation = (event) => {
+      const { beta, gamma } = event;
+      setSide2Hovered(true);
+      setMousePosition({ x: gamma, y: beta });
+    };
+  
+    window.addEventListener('deviceorientation', handleDeviceOrientation);
+  
+    return () => {
+      window.removeEventListener('deviceorientation', handleDeviceOrientation);
+    };
+  }, []);
+  ;
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -146,12 +212,12 @@ function Thailande({ onLoaded }) {
       <div className="thailand-menu-burger">&#9776;</div>
       <div className={`sidethailand ${showImages ? 'move-up' : ''}`} id="sidethailand1"></div>
       <div
-        className={`sidethailand ${showImages ? 'move-up' : ''} ${side2Hovered ? 'side2-hovered' : ''}`}
-        id="sidethailand2"
-        style={{
-          transform: side2Hovered ? `perspective(500px) rotateY(${(mousePosition.x - window.innerWidth / 2) * 0.009}deg) rotateX(${(mousePosition.y - window.innerHeight / 2) * -0.003}deg)` : 'none'
-        }}
-      ></div>
+  className={`sidethailand ${showImages ? 'move-up' : ''} ${side2Hovered ? 'side2-hovered' : ''}`}
+  id="sidethailand2"
+  style={{
+    transform: side2Hovered ? `perspective(500px) rotateY(${(mousePosition.x - window.innerWidth / 2) * 0.0004}deg) rotateX(${(mousePosition.y - window.innerHeight / 2) * -0.0003}deg)` : 'none'
+  }}
+></div>
       <div className={`sidethailand ${showImages ? 'move-up' : ''}`} id="sidethailand3"></div>
       <div ref={textRef} className={`text ${showImages ? 'move-up' : ''} ${textMovedUp ? 'text-move-up' : ''}`}>
         THAILAND

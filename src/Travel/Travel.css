@@ -304,6 +304,7 @@
   }
 
   .image-text-container {
+    width: 100%;
     transform: translateX(-50%) translateY(-50px);
   }
 }
@@ -322,7 +323,7 @@
 
   .image-item img {
     margin-top: 20px;
-    max-width: 180px;
+    max-width: 140px;
     max-height: 200px;
   }
 
@@ -338,13 +339,13 @@
   }
 
   .images-container {
-    bottom: 250px;
+    bottom: 300px;
   }
 
   .image-item img {
     margin-top: 30px;
-    max-width: 180px;
-    max-height: 200px;
+    max-width: 130px;
+    max-height: 180px;
   }
 
   .image-text-container {
@@ -366,11 +367,11 @@
   }
 
   .images-container {
-    bottom: 250px;
+    bottom: 300px;
   }
 
   .image-item img {
-    max-width: 150px;
+    max-width: 130px;
     max-height: 180px;
   }
 }
